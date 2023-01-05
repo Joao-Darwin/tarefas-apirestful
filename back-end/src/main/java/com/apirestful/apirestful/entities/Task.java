@@ -1,7 +1,7 @@
 package com.apirestful.apirestful.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.Instant;
 import java.util.Objects;
 
 import com.apirestful.apirestful.enums.TaskStatus;
@@ -27,7 +27,7 @@ public class Task implements Serializable{
 	private String description;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
-	private Date date;
+	private Instant date;
 
 	private Integer taskStatus;
 
@@ -38,7 +38,7 @@ public class Task implements Serializable{
 	public Task() {
 	}
 
-	public Task(Long id, String name, String description, Date date, TaskStatus status, User user) {
+	public Task(Long id, String name, String description, Instant date, TaskStatus status, User user) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -71,11 +71,11 @@ public class Task implements Serializable{
 		this.description = description;
 	}
 
-	public Date getDate() {
+	public Instant getDate() {
 		return date;
 	}
 	
-	public void setDate(Date date) {
+	public void setDate(Instant date) {
 		this.date = date;
 	}
 	
