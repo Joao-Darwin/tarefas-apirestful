@@ -14,6 +14,10 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	public User insert(User user) {
+		return userRepository.save(user);
+	}
+	
 	public User findByid(Long id) {
 		User user = userRepository.findById(id).get();
 		return user;
