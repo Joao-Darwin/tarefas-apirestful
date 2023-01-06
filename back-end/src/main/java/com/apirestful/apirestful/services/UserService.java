@@ -24,4 +24,18 @@ public class UserService {
 		return listUser;
 	}
 	
+	public User updateUser(Long id, User user) {
+		User userEdit = findByid(id);
+		
+		updateDate(userEdit, user);
+		
+		return userRepository.save(userEdit);
+	}
+	
+	public void updateDate(User userEdit, User user) {
+		userEdit.setName(user.getName());
+		userEdit.setEmail(user.getEmail());
+		userEdit.setPassword(user.getPassword());
+		userEdit.setPhone(user.getPhone());
+	}
 }
