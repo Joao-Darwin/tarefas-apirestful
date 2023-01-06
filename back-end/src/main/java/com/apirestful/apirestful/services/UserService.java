@@ -28,6 +28,10 @@ public class UserService {
 		return listUser;
 	}
 	
+	public void deleteById(long id) {
+		userRepository.deleteById(id);
+	}
+	
 	public User updateUser(Long id, User user) {
 		User userEdit = findByid(id);
 		
