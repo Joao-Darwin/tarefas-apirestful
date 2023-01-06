@@ -1,5 +1,7 @@
 package com.apirestful.apirestful.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,4 +18,10 @@ public class UserService {
 		User user = userRepository.findById(id).get();
 		return user;
 	}
+	
+	public List<User> findAll() {
+		List<User> listUser = userRepository.findAll();
+		return listUser;
+	}
+	
 }
