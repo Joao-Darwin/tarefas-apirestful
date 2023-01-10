@@ -1,5 +1,7 @@
 package com.apirestful.apirestful.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,10 @@ public class TaskService {
 	public Task findById(Long id) {
 		Task task = taskRepository.findById(id).get();
 		return task;
+	}
+	
+	public List<Task> findAll() {
+		List<Task> list = taskRepository.findAll();
+		return list;
 	}
 }
