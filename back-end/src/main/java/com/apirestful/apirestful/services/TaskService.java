@@ -32,6 +32,10 @@ public class TaskService {
 		taskRepository.deleteById(id);
 	}
 	
+	public void deleteAll() {
+		taskRepository.deleteAll();
+	}
+	
 	public Task update(Long id, Task task) {
 		Task oldTask = findById(id);
 		
