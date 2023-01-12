@@ -45,4 +45,10 @@ public class TaskResource {
 		taskService.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@DeleteMapping
+	public ResponseEntity<Void> deleteAll() {
+		taskService.deleteAll();
+		return ResponseEntity.noContent().build();
+	}
 }
