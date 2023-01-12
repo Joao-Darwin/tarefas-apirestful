@@ -2,6 +2,8 @@ package com.apirestful.apirestful.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,5 +23,11 @@ public class TaskResource {
 	public ResponseEntity<Task> insert(@RequestBody Task task) {
 		task = taskService.insert(task);
 		return ResponseEntity.ok().body(task);
+	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Task> findById(@PathVariable Long id) {
+		Task nTask = taskService.findById(id);
+		return ResponseEntity.ok().body(nTask);
 	}
 }

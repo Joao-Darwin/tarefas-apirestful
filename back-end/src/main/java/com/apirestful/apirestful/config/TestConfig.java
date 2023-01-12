@@ -32,8 +32,9 @@ public class TestConfig implements CommandLineRunner{
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		
 		Task t1 = new Task(null, "Terminar fluxograma", "Fluxograma da tela de login", Instant.now(), TaskStatus.PENDING, u1);
+		Task t2 = new Task(null, "Terminar camadas de resources", "Camada de resource do task", Instant.now(), TaskStatus.MAKING, u2);
 		
-		taskRepository.save(t1);
+		taskRepository.saveAll(Arrays.asList(t1, t2));
 	}
 
 	
