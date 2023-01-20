@@ -1,13 +1,11 @@
 import './App.css';
-import SearchBar from './components/SearchBar';
-import TaskRequest from './components/TaskRequest';
+import FormDaRequisicao from './components/FormDaRequisicao';
 
 function App() {
   return (
     <div className="App">
       <h1>Tarefas</h1>
-      <SearchBar />
-      <TaskRequest />
+      <FormDaRequisicao/>
     </div>
   );
 }
