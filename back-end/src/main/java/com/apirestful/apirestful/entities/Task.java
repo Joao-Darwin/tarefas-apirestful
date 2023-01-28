@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import com.apirestful.apirestful.enums.TaskStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +32,7 @@ public class Task implements Serializable{
 
 	private Integer taskStatus;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
